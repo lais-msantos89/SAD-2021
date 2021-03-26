@@ -29,3 +29,27 @@ else:
   print('Inocente')
   
 
+'''Exercício 5: Faça um programa que leia uma quantidade indeterminada de 
+números positivos e conte quantos deles estão nos seguintes intervalos 
+[0-25], [26-50], [51-75] e [76-100]. A entrada de dados deverá terminar quando for lido um número negativo.'''
+
+print('Forneça uma lista de números e ao final digite a palavra "sair":')
+try:
+    conj = []     
+    while True: 
+        conj.append(float(input()))           
+# if the input is not-number, just print the list 
+except: 
+    print(conj) 
+conj1 = []
+for x in conj:
+  if x >=0 and x <= 25:
+    conj1.append(x)
+tconj1 = set(conj1)
+print('O número de elementos no conjunto 1 é:',len(tconj1))
+conj2 = []
+for x in conj:
+  if x >=26 and x <= 50:
+    conj2.append(x)
+tconj2 = set(conj2)
+print('O número de elementos no conjunto 2 é:',len(tconj2))
