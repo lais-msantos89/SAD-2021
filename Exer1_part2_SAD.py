@@ -53,3 +53,55 @@ for x in conj:
     conj2.append(x)
 tconj2 = set(conj2)
 print('O número de elementos no conjunto 2 é:',len(tconj2))
+
+
+'''Exercício 6: Desenvolver um programa para verificar a nota do aluno em uma prova com 10 questões, o programa deve perguntar ao aluno a resposta de cada questão e ao final comparar com o gabarito da prova e assim calcular o total de acertos e a nota (atribuir 1 ponto por resposta certa). Após cada aluno utilizar o sistema, deve ser feita uma pergunta se outro aluno vai utilizar o sistema. Após todos os alunos terem respondido informar:
+
+1) Maior e Menor acerto
+
+2) Total de Alunos que utilizaram o sistema
+
+3) A Média das Notas da Turma.'''
+
+
+#Gabarito:
+gab = ('A','B','C','A','D','C','B','B','A','D')
+type(gab)
+#coletando as respostas:
+notas = []
+NA = 0
+while True:
+  print('Há mais alunos para registrar nota?')
+  sn = input()
+  SN = sn.upper()
+  if SN == 'SIM':
+    NA = NA+1
+    print('Informe o item correto em cada questão:')
+    resposta = []
+    for i in range(1,11):
+      print('Resposta',i)
+      r_i = input()
+      R_i = r_i.upper()
+      resposta.append(R_i)
+    print(resposta)
+    sol= tuple(resposta)
+    print(sol)
+    S = 0
+    for i in range(0,10):
+      if sol[i] == gab[i]:
+        S = S+1
+      else:
+        S= S
+    print('O número de acertos é',S)
+    notas.append(S)
+  else:
+    NA= NA
+    break
+print(notas)
+print('Total de alunos:', NA)
+print('A menor nota da turma foi', min(notas))
+print('A maior nota da turma foi', max(notas))
+me = sum(notas)/NA
+print('A média da turma é', me) 
+
+
